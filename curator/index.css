@@ -4,6 +4,7 @@
 
 body {
     background-color: #f1f1f1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .create-schema {
@@ -81,8 +82,9 @@ body {
 }
 
 .conn-modal form button,
-.schema-name button {
-    padding: 4% 12%;
+.schema-name button,
+.tab-content form button {
+    padding: 1% 4%;
     border: none;
     outline: none;
     background-color: #93a8d0;
@@ -116,4 +118,59 @@ body {
 
 label {
     color: #498fdc;
+}
+
+.schema-type {
+    margin: 40px;
+}
+
+.schema-type .tabs {
+    background-color: #add8e6;
+}
+
+.schema-type .tabs button {
+    outline: none;
+    border: none;
+    padding: 20px 70px;
+    background-color: inherit;
+    color: grey;
+    font-size: medium;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.schema-type .tabs button:hover {
+    background-color: #ddd;
+}
+
+.schema-type .tabs button.active {
+    background-color: #ccc;
+}
+
+.tab-content {
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 40px;
+}
+
+.tab-content #tab-content-person,
+.tab-content #tab-content-user {
+    display: none;
+}
+
+.tab-content form,
+.tab-content table {
+    padding: 20px;
+}
+.tab-content form input[type=text] {
+    height: 30px;
+    width: 20%;
+}
+
+.tab-content table td {
+    padding: 30px 40px 0 0    ;
+}
+
+.tab-content table input[type=checkbox] {
+    padding: 10px;
 }

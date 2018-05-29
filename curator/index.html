@@ -18,9 +18,85 @@
                     <span>Schema Name:</span>
                     <input type="text" name="schemaname" id="schema-name">
                 </label>
-                <button type="button">Save</button>
+                <button type="button">Create</button>
             </div>
         </form>
+    </section>
+    <section class="schema-type">
+        <div class="tabs">
+            <button id="btnPerson" class="tabs-link" type="button">Person</button>
+            <button id="btnUser" class="tabs-link" type="button">User</button>
+        </div>
+        <div id="tab-content-person" class="tab-content">
+            <form>
+                <div>
+                    <label for="field-name">
+                        <span>Field name:</span>
+                        <input type="text" id="field-name">
+                        <button type="button">Create</button>
+                    </label>
+                </div>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Private?</th>
+                        <th>Mask</th>
+                        <th>Encrypt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Firstname:</td>
+                        <td><input type="checkbox" id="chk-private"></td>
+                        <td><input type="checkbox" id="chk-mask"></td>
+                        <td><input type="checkbox" id="chk-encrypt"></td>
+                    </tr>
+                    <tr>
+                        <td>Lastname:</td>
+                        <td><input type="checkbox" id="chk-private"></td>
+                        <td><input type="checkbox" id="chk-mask"></td>
+                        <td><input type="checkbox" id="chk-encrypt"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="tab-content-user" class="tab-content">
+            <form>
+                <div>
+                    <label for="field-name">
+                        <span>Field name:</span>
+                        <input type="text" id="field-name">
+                        <button type="button">Create</button>
+                    </label>
+                </div>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Private?</th>
+                        <th>Mask</th>
+                        <th>Encrypt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Username:</td>
+                        <td><input type="checkbox" id="chk-private"></td>
+                        <td><input type="checkbox" id="chk-mask"></td>
+                        <td><input type="checkbox" id="chk-encrypt"></td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><input type="checkbox" id="chk-private"></td>
+                        <td><input type="checkbox" id="chk-mask"></td>
+                        <td><input type="checkbox" id="chk-encrypt"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
     <div id="connectionModal" class="conn-modal">
         <div class="conn-modal-header">
@@ -72,6 +148,29 @@
         btnCreateSchema.addEventListener('click', () => {
             schemaName.style.display = 'block';
         })
+    
+        let btnPerson = document.getElementById('btnPerson');
+        btnPerson.addEventListener('click', (event) => {
+            this.openTabContent(event, 'tab-content-person');
+        });
+        let btnUser = document.getElementById('btnUser');
+        btnUser.addEventListener('click', (event) => {
+            this.openTabContent(event, 'tab-content-user');
+        });
+        function openTabContent(event, tabname) {
+            let tabContents = document.getElementsByClassName('tab-content');
+            for(let i = 0; i < tabContents.length; i++) {
+                tabContents[i].style.display = 'none';
+            };
+            let tabLinks = document.getElementsByClassName('tabs-link');
+            for(let j = 0; j < tabLinks.length; j++) {
+                tabLinks[j].className = tabLinks[j].className.replace(' active', '');
+            };
+            document.getElementById(tabname).style.display = 'block';
+            event.target.className += ' active';
+        }
+        
+        btnPerson.click();
     </script>
 </body>
 
