@@ -7,9 +7,21 @@
 </head>
 
 <body>
-    <div class="button-area">
+    <header class="button-area">
         <button class="create-schema" type="button" id="btnCreateSchema">Create Schema</button>
-    </div>
+        <button class="create-schema" type="button" id="btnDBConn">DB Connection</button>
+    </header>
+    <section class="schema-name">
+        <form>
+            <div>
+                <label for="schema-name">
+                    <span>Schema Name:</span>
+                    <input type="text" name="schemaname" id="schema-name">
+                </label>
+                <button type="button">Save</button>
+            </div>
+        </form>
+    </section>
     <div id="connectionModal" class="conn-modal">
         <div class="conn-modal-header">
             <p>Database Information</p>
@@ -34,15 +46,16 @@
                     </label>
                 </div>
                 <div>
-                    <button type="button" disabled>Connect</button>                    
+                    <button type="button" disabled>Connect</button>
+                    <button type="button" disabled>Test</button>                    
                 </div>
             </form>
         </div>
     </div>
     <script>
         let connModal = document.getElementsByClassName('conn-modal')[0];
-        let btnCreateSchema = document.getElementById('btnCreateSchema');
-        btnCreateSchema.addEventListener('click', (event) => {
+        let btnDBConn = document.getElementById('btnDBConn');
+        btnDBConn.addEventListener('click', (event) => {
             connModal.style.display = 'block';
         });
         let btnCrossClose = document.getElementsByClassName('close')[0];
@@ -53,6 +66,11 @@
             if (event.target === connModal) {
                 btnCrossClose.click();
             }
+        })
+        let schemaName = document.getElementsByClassName('schema-name')[0];
+        let btnCreateSchema = document.getElementById('btnCreateSchema');
+        btnCreateSchema.addEventListener('click', () => {
+            schemaName.style.display = 'block';
         })
     </script>
 </body>

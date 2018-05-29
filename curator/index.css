@@ -31,7 +31,7 @@ body {
     top: 20%;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 50vw;
+    width: 33vw;
     height: 45vh;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     
@@ -80,7 +80,8 @@ body {
     outline: none;
 }
 
-.conn-modal form button {
+.conn-modal form button,
+.schema-name button {
     padding: 4% 12%;
     border: none;
     outline: none;
@@ -89,4 +90,30 @@ body {
     border-radius: 5px;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+.schema-name button {
+    padding: 1% 5%;
+    margin-left: 20px;
+}
+
+.schema-name {
+    display: none;
+    margin-left: 40px;
+}
+
+.schema-name span {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+}
+
+.schema-name input[type=text] {    
+    margin-left: 25px;
+    width: 25%;
+    height: 30px;
+    outline: none;
+}
+
+label {
+    color: #498fdc;
 }
