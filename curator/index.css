@@ -1,0 +1,92 @@
+* {
+    box-sizing: content-box;
+}
+
+body {
+    background-color: #f1f1f1;
+}
+
+.create-schema {
+    outline: none;
+    border: none;
+    background-color: #c75cc7;
+    padding: 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #f1f1f1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+    font-size: x-large;
+}
+
+.button-area {
+    margin: 40px;
+}
+
+.conn-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 30%;
+    top: 20%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50vw;
+    height: 45vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+.conn-modal-header {
+    border-bottom: 1px solid #ccc;
+    padding: 20px;
+    background-color: #abd5e8;    
+    font-weight: bold;
+}
+
+.conn-modal-header > p {
+    display: inline;
+}
+
+.conn-modal-header > .close {
+    float: right;
+    cursor: pointer;
+}
+
+
+.conn-modal-content {
+    background-color: #fefefe;    
+    padding: 4% 0;    
+}
+
+.conn-modal form > div {
+    padding: 20px;
+}
+
+.conn-modal form label::after {
+    margin-right: 10px;
+}
+
+.conn-modal form select {
+    width: 40%;
+    height: 30px;
+    margin-left: 50px;
+    outline: none;
+}
+
+.conn-modal form input[type=text] {
+    width: 60%;
+    height: 30px;   
+    outline: none;
+}
+
+.conn-modal form button {
+    padding: 4% 12%;
+    border: none;
+    outline: none;
+    background-color: #93a8d0;
+    color: #fff;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+}

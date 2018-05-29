@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="button-area">
+        <button class="create-schema" type="button" id="btnCreateSchema">Create Schema</button>
+    </div>
+    <div id="connectionModal" class="conn-modal">
+        <div class="conn-modal-header">
+            <p>Database Information</p>
+            <span class="close">&times;</span>
+        </div>
+        <div class="conn-modal-content">
+            <form>
+                <div>
+                    <label for="dbType"> 
+                        <span>DB Type:</span>
+                        <select id="dbType">
+                            <option value="Mongo">Mongo</option>
+                            <option value="MySql">MySql</option>
+                            <option value="Postgres">Postgres</option>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label for="dbConnection">
+                        <span>DB Connection:</span>
+                        <input type="text" id="dbConnection">
+                    </label>
+                </div>
+                <div>
+                    <button type="button" disabled>Connect</button>                    
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        let connModal = document.getElementsByClassName('conn-modal')[0];
+        let btnCreateSchema = document.getElementById('btnCreateSchema');
+        btnCreateSchema.addEventListener('click', (event) => {
+            connModal.style.display = 'block';
+        });
+        let btnCrossClose = document.getElementsByClassName('close')[0];
+        btnCrossClose.addEventListener('click', () => {
+            connModal.style.display = 'none';
+        });
+        window.addEventListener('click', (event) => {
+            if (event.target === connModal) {
+                btnCrossClose.click();
+            }
+        })
+    </script>
+</body>
+
+</html>
