@@ -18,7 +18,7 @@
                     <span>Schema Name:</span>
                     <input type="text" name="schemaname" id="schema-name">
                 </label>
-                <button type="button">Create</button>
+                <button type="button" class="schema-name__btn">Create</button>
             </div>
         </form>
     </section>
@@ -171,6 +171,11 @@
         }
         
         btnPerson.click();
+
+        let btnCreateSchemaName = document.getElementsByClassName('schema-name__btn')[0];
+        btnCreateSchemaName.addEventListener('click', () => {
+            document.getElementsByClassName('schema-type')[0].style.display = 'block';
+        })
     </script>
 </body>
 

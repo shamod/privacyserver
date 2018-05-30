@@ -121,6 +121,7 @@ label {
 }
 
 .schema-type {
+    display: none;
     margin: 40px;
 }
 
